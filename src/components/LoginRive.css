@@ -1,0 +1,245 @@
+/* Global Container - Unified Background */
+.login-container {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    background: radial-gradient(circle at 70% 50%, #1a2c4e 0%, #020c1b 70%);
+    overflow: hidden;
+    position: relative;
+}
+
+/* Background Effects */
+.login-container::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -20%;
+    width: 80%;
+    height: 150%;
+    background: radial-gradient(circle, rgba(79, 195, 247, 0.05) 0%, transparent 60%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Left components */
+.login-left-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    position: relative;
+    z-index: 20;
+    /* Transparent background to blend */
+    background: transparent;
+}
+
+.login-content-wrapper {
+    width: 100%;
+    max-width: 450px;
+    padding: 3.5rem;
+    /* Glassmorphism */
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 24px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle glow border effect */
+.login-content-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+}
+
+.login-right-section {
+    flex: 1.5;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    /* No solid background to ensure blending */
+}
+
+.rive-wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    /* Masking the Rive adjustment to blend edges if the asset has a BG */
+    -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 95%);
+    mask-image: radial-gradient(circle at center, black 40%, transparent 95%);
+}
+
+.rive-canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+    mix-blend-mode: screen;
+    /* Experimental: Try to blend Rive BG if it's dark */
+    opacity: 0.9;
+}
+
+/* Overlay to unify tint */
+.rive-overlay {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(circle at center, transparent 30%, #020c1b 100%);
+    z-index: 10;
+    mix-blend-mode: multiply;
+}
+
+.login-header {
+    text-align: left;
+    margin-bottom: 3rem;
+}
+
+.login-header h2 {
+    font-family: 'Orbitron', 'Montserrat', sans-serif;
+    font-size: 3rem;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, #fff 0%, #a8b2d1 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 20px rgba(79, 195, 247, 0.3);
+}
+
+.login-header p {
+    color: #8892b0;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    letter-spacing: 0.02em;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.form-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #4FC3F7;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-left: 0.25rem;
+    text-shadow: 0 0 10px rgba(79, 195, 247, 0.4);
+}
+
+.input-wrapper {
+    position: relative;
+}
+
+.form-input {
+    width: 100%;
+    padding: 1.25rem 1.5rem;
+    background: rgba(10, 22, 40, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    outline: none;
+}
+
+.form-input:focus {
+    border-color: #4FC3F7;
+    background: rgba(10, 22, 40, 0.8);
+    box-shadow: 0 0 0 1px #4FC3F7, 0 0 20px rgba(79, 195, 247, 0.2);
+    transform: translateY(-1px);
+}
+
+.form-input::placeholder {
+    color: rgba(136, 146, 176, 0.5);
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 1.25rem;
+    background: linear-gradient(135deg, #FF1E56 0%, #d11541 100%);
+    color: white;
+    font-family: 'Orbitron', 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 10px 30px -10px rgba(255, 30, 86, 0.5);
+    margin-top: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.submit-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: 0.5s;
+}
+
+.submit-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 20px 40px -10px rgba(255, 30, 86, 0.7);
+    background: linear-gradient(135deg, #ff3669 0%, #e6164a 100%);
+}
+
+.submit-btn:hover::before {
+    left: 100%;
+}
+
+.submit-btn:active {
+    transform: translateY(-1px);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .login-container {
+        flex-direction: column-reverse;
+        padding-top: 5rem;
+    }
+
+    .login-left-section {
+        width: 100%;
+        padding: 2rem 1.5rem;
+    }
+
+    .login-content-wrapper {
+        padding: 2.5rem;
+        max-width: 100%;
+    }
+
+    .login-right-section {
+        width: 100%;
+        height: 45vh;
+        min-height: 350px;
+        flex: none;
+    }
+}

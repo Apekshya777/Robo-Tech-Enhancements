@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+
+:root {
+  /* Colors */
+  --primary-blue: #0052CC;
+  --primary-red: #FF1E56;
+  --primary-red-hover: #E6164A;
+  --primary-red-glow: rgba(255, 30, 86, 0.4);
+  --primary-red-glow-strong: rgba(255, 30, 86, 0.6);
+  --white: #FFFFFF;
+  --light-gray: #F5F5F5;
+  --dark-text: #1A1A1A;
+  --gray-text: #666666;
+  --light-text: rgba(255, 255, 255, 0.9);
+
+  /* Fonts */
+  --font-heading: 'Orbitron', 'Montserrat', sans-serif;
+  --font-body: 'Inter', 'Montserrat', system-ui, sans-serif;
+
+  /* Typography */
+  font-family: var(--font-body);
+  line-height: 1.6;
+  font-weight: 400;
+
+  /* Rendering */
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--white);
+  color: var(--dark-text);
+  min-height: 100vh;
+}
+
+#root {
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Button Styles */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 28px;
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary-red) 0%, #E6164A 100%);
+  color: var(--white);
+  box-shadow: 0 4px 20px var(--primary-red-glow);
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px var(--primary-red-glow-strong);
+}
+
+.btn-primary span {
+  transition: transform 0.3s ease;
+}
+
+.btn-primary:hover span {
+  transform: translateX(4px);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--white);
+  border: 2px solid rgba(255, 255, 255, 0.8);
+}
+
+.btn-outline:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: var(--white);
+  transform: translateY(-3px);
+}
+
+.btn-outline span {
+  transition: transform 0.3s ease;
+}
+
+.btn-outline:hover span {
+  transform: translateX(4px);
+}
