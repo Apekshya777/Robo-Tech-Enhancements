@@ -24,22 +24,16 @@ const Hero = () => {
         <section className="hero">
             <div className="hero-container">
                 <div className="hero-content">
-                    <p className="hero-subtitle">Welcome to Robotech Learning Center</p>
-                    <h1 className="hero-title">
-                        Where Young Minds<br />
-                        Become Future Innovators
-                    </h1>
-                    <p className="hero-description">
-                        Dive into fun, gamified lessons in robotics, coding, and ICT.
-                        Build real projects, solve challenges, and level up your skills one
-                        mission at a time.
+                    <h1 className="hero-title">Welcome to ROBO-TECH Learning Centre</h1>
+                    <p className="hero-subtitle">
+                        where learning robotics is fun, exciting, and full of cool adventures!
                     </p>
                     <div className="hero-buttons">
                         <button className="btn btn-primary">
-                            Start Learning <span>→</span>
+                            LogIn <span>→</span>
                         </button>
                         <button className="btn btn-outline">
-                            Explore Courses <span>→</span>
+                            Register Now <span>→</span>
                         </button>
                     </div>
                 </div>

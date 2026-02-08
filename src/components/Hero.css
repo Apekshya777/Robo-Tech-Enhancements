@@ -47,10 +47,10 @@
 
 .hero-subtitle {
     font-family: var(--font-heading);
-    font-size: 0.85rem;
+    font-size: 1.15rem;
     font-weight: 500;
     color: rgba(255, 255, 255, 0.95);
-    margin-bottom: 12px;
+    margin-bottom: 30px;
     letter-spacing: 2px;
     text-transform: uppercase;
 }
@@ -78,8 +78,9 @@
 
 .hero-buttons {
     display: flex;
+    flex-direction: column;
     gap: 14px;
-    flex-wrap: wrap;
+    align-items: flex-start;
 }
 
 /* Button styles moved to index.css */
