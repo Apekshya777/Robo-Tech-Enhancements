@@ -1,5 +1,7 @@
 import type { MouseEvent } from 'react';
 import './FeaturesSection.css';
+import Shuffle from './Shuffle';
+import ScrollStack, { ScrollStackItem } from './ScrollStack';
 import {
     FaRobot,
     FaGamepad,
@@ -68,35 +70,58 @@ function FeaturesSection() {
     return (
         <section className="features-section">
             <div className="features-header">
-                <h2 className="features-title">Our Exciting Courses</h2>
-                <p className="features-subtitle">
-                    Check out all the amazing robot adventures waiting for you!
-                    Pick your favorite and start building!
-                </p>
+                <Shuffle
+                    text="Our Exciting Courses"
+                    tag="h2"
+                    className="features-title"
+                    shuffleDirection="right"
+                    duration={0.35}
+                    animationMode="evenodd"
+                    shuffleTimes={1}
+                    ease="power3.out"
+                    stagger={0.03}
+                    threshold={0.1}
+                    triggerOnce={false}
+                    triggerOnHover={true}
+                    loop={false}
+                />
+
             </div>
 
-            <div className="features-grid">
+            <ScrollStack
+                className="features-scroll-stack"
+                itemDistance={120}
+                itemScale={0.01}
+                itemStackDistance={15}
+                stackPosition="30%"
+                useWindowScroll={true}
+            >
                 {features.map((feature, index) => (
-                    <div
+                    <ScrollStackItem
                         key={index}
-                        className="feature-card"
-                        onMouseMove={handleMouseMove}
+                        itemClassName="feature-stack-card"
                     >
-                        <div className="feature-icon-wrapper">
-                            {feature.icon}
+                        <div
+                            className="feature-card-content"
+                            onMouseMove={handleMouseMove}
+                        >
+                            <div className="feature-icon-wrapper">
+                                {feature.icon}
+                            </div>
+                            <h3 className="feature-title">
+                                {feature.title}
+                                <span className="feature-emoji">{feature.emoji}</span>
+                            </h3>
+                            <p className="feature-description">
+                                {feature.description}
+                            </p>
                         </div>
-                        <h3 className="feature-title">
-                            {feature.title}
-                            <span className="feature-emoji">{feature.emoji}</span>
-                        </h3>
-                        <p className="feature-description">
-                            {feature.description}
-                        </p>
-                    </div>
+                    </ScrollStackItem>
                 ))}
-            </div>
+            </ScrollStack>
         </section>
     );
 }
 
 export default FeaturesSection;
+
